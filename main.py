@@ -14,11 +14,13 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-import webapp2
+import webapp2, jinja2
+from render_page import Template
 
-class MainHandler(webapp2.RequestHandler):
+
+class MainHandler(Template):
     def get(self):
-        self.response.write('Hello world!')
+        self.render('index.html')
 
 app = webapp2.WSGIApplication([
     ('/', MainHandler)
