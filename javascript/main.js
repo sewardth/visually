@@ -36,7 +36,7 @@ function readCSV(file)
 		header:header,
 		dynamicTyping:true,
 		step: function(row) {
-			fileData.push(row);
+			fileData.push(row.data[0]);
 		},
 		complete: function() {
 			console.log("Finished Reading File");
@@ -60,3 +60,6 @@ function cleanModal()
 {
 	$(".modal-body").html("Processing your data.  Please wait.");
 }
+
+
+
